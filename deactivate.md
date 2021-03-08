@@ -1,6 +1,7 @@
 Only an admin can deactivate a user. 
 
 1. An admin user deactivating an existing user
+
 ```
 factory.put(
     "api/accounts/deactivate/",
@@ -15,7 +16,26 @@ factory.put(
 }
 ```
 
-2. Any user trying to deactivate with invalid token/ credentials,
+2. An admin user deactivating a non-existing user
+
+```
+factory.put(
+    "api/accounts/deactivate/",
+    {"email": "test@gmail.com"},
+    HTTP_AUTHORIZATION=f"Bearer {access_token}",
+)
+
+{
+    "success": False,
+    "error-code": None,
+    "errors": {
+        "email": [f"No such user with the email address: '{email}' exists"]
+    },
+    "message": "Validation errors have occurred",
+}
+```
+
+3. Any user trying to deactivate with invalid token/ credentials,
 
 ```
 factory.put(
