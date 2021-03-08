@@ -1,5 +1,6 @@
 1. Trying to register a new non-existing  user
 
+```
 request = factory.post(
     "/api/accounts/register/",
     {
@@ -15,9 +16,11 @@ message = {
     "data": [],
 }
 self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+```
 
 2. Without any input data,
 
+```
 request = factory.post(
     "/api/accounts/register/",
     {},
@@ -34,9 +37,11 @@ message = {
     "message": "Validation errors has occurred",
 }
 self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+```
 
 3. password and confirm_passwords do not match
 
+```
 request = factory.post(
     "/api/accounts/register/",
     {
@@ -55,5 +60,24 @@ message = {
     "message": "Validation errors has occurred",
 }
 self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+```
 
+4. Registering again with an already existing email,
 
+```
+request = factory.post(
+    "/api/accounts/register/",
+    {
+        "email": "raja@gmail.com",
+        "password": "12345",
+        "confirm_password": "123456",
+    },
+)
+message = {
+    "success": False,
+    "error-code": None,
+    "errors": {"email": ["The email address has already been registered"]},
+    "message": "Validation errors has occurred",
+}
+self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+```
