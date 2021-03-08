@@ -34,7 +34,7 @@ message = {
         "password": ["password field is required"],
         "confirm_password": ["confirm_password field is required"],
     },
-    "message": "Validation errors has occurred",
+    "message": "Validation errors have occurred",
 }
 self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 ```
@@ -57,7 +57,7 @@ message = {
     "errors": {
         "password": ["'password' and 'confirm_password' do not match"],
     },
-    "message": "Validation errors has occurred",
+    "message": "Validation errors have occurred",
 }
 self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 ```
@@ -76,7 +76,7 @@ request = factory.post(
 message = {
     "success": False,
     "error-code": None,
-    "errors": {"email": ["The email address has already been registered"]},
+    "errors": {"email": ["The email address have already been registered"]},
     "message": "Validation errors has occurred",
 }
 self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
