@@ -15,6 +15,6 @@ self.assertIn("access", response.data)
 ```
 
 ```
-{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNTI1Mjg"
-"3NywianRpIjoiNGQzODE0ZGNiMTZkNDA2ZGI5YjgzOTg0ZDIyZWQ4YjciLCJ1c2VyX2lkIjoxOH0.rhVECzKZcN98HF7KkF8Vn9A1TzLJYRrC3H7-mKDdP-Q","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9."eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1MTY2Nzc3LCJqdGkiOiI4NGFhNTRiYWNkMTA0NDYwODBjNTA2NjFjZDYyMzEwOCIsInVzZXJfaWQiOjE4fQ." "G-vAAcqWuxloMJ7ba8CstTSueWyawRf6Dx3CGinghCU"}
+{"refresh":"...............",
+"access":".................."}
 ```
