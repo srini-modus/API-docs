@@ -1,30 +1,25 @@
-1. A user has already been registered, now he has to be approved by administrator to use the system.
-An admin can log in to the system with his credentials, and can approve the user.
-Ignoring the approval process is very much like to disapproving. Maybe we can block a user permanently (?)
+Only an admin can deactivate a user. 
 
-
-
+1. An admin user deactivating an existing user
 ```
 factory.put(
-    "/api/accounts/approve/",
+    "api/accounts/deactivate/",
     {"email": "test@gmail.com"},
     HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
-message = {
+
+{
     "success": True,
-    "message": "User with the email address: 'test@gmail.com' has been approved.",
+    "message": "Profile with email :'test@gmail.com' has successfully been deactivated.",
     "data": [],
-},
-self.assertEqual(response.status_code, status.HTTP_200_OK)
+}
 ```
-Note: `PUT` method is idempotent here.
 
-2. An user trying to approve with invalid token/ credentials,
-
+2. Any user trying to deactivate with invalid token/ credentials,
 
 ```
 factory.put(
-    "/api/accounts/approve/",
+    "/api/accounts/deactivate/",
     {"email": "test@gmail.com"},
     HTTP_AUTHORIZATION=f"Bearer {invalid_access_token}",
 )
