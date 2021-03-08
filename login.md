@@ -18,3 +18,14 @@ self.assertIn("access", response.data)
 {"refresh":"...............",
 "access":".................."}
 ```
+All the subsequent requests after login should include the `access` token in the `Authorization` header.
+e.g: 
+
+```
+requests.post(
+    ................
+    headers={
+        "Authorization": "Bearer {access_token}".format(access_token=access)
+    }
+)
+```
