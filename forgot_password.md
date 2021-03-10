@@ -21,20 +21,21 @@ self.assertEqual(
 )
 ```
 
-User clicks on his forgot password hyperlink  - '/api/accounts/forgot_password?token=mnks3K903cBccE_roofibAOzwLlOjfGCxkE-7MBq4m4'
+User clicks on his forgot password hyperlink  - `/api/accounts/forgot_password?token=mnks3K903cBccE_roofibAOzwLlOjfGCxkE-7MBq4m4`
 the querystring `token` is validated against users' reset password token, 
 
 ```
-url = '/api/accounts/forgot_password?token=mnks3K903cBccE_roofibAOzwLlOjfGCxkE-7MBq4m4'
+url = `"/api/accounts/forgot_password?token=mnks3K903cBccE_roofibAOzwLlOjfGCxkE-7MBq4m4"`
 request = self.factory.get(url)
 ```
 
-The received response contains `Location` header where the client should redirect to, It is generally a `reset-password` link.
+Assuming token is validated and server a response containing `Location` header where the client should redirect to, It is generally a `reset-password` page.
 
 ```
 self.assertIn("Location", response)
 self.assertEqual(response.status_code, status.HTTP_307_TEMPORARY_REDIRECT)
 ```
+On the `reset-password` page, the registered user has to enter his new password and confirm new password. Then his password will be successfully changed.
 
 2. Anonymous user enters a random email to reset password,
 
