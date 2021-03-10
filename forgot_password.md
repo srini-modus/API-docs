@@ -4,7 +4,7 @@ his registered email address.
 
 ```
  request = self.factory.put(
-    reverse("forgot_password"),
+    '/api/accounts/forgot_password',
     HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
 ```
@@ -46,7 +46,7 @@ code is 200.
 
 ```
 request = factory.put(
-    reverse("forgot_password"),
+    '/api/accounts/forgot_password',
     {"email": "john@gmail.com"},
 )
 

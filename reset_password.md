@@ -3,7 +3,7 @@ The user enters the current password, new-password, confirms new-password.
 
 ```
 request = self.factory.put(
-    reverse("reset_password"),
+    '/api/accounts/reset_password',
     {
         "password": "12345",
         "new_password": "srini",
@@ -20,7 +20,7 @@ self.assertEqual(
 2. If new password and confirm new password do not match,
 ```
 request = self.factory.put(
-    reverse("reset_password"),
+    '/api/accounts/reset_password',
     {
         "password": "12345",
         "new_password": "srini",
@@ -47,7 +47,7 @@ self.assertEqual(
 3. If the user with the wrong password,
 ```
 request = self.factory.put(
-    reverse("reset_password"),
+    '/api/accounts/reset_password',
     {
         "password": "123456",
         "new_password": "srini",
