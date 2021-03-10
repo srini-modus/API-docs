@@ -1,7 +1,8 @@
-1. A user has already been registered, now he has to be approved by administrator to use the system.
-An admin can log in to the system with his credentials, and can approve the user.
-Ignoring the approval process is very much like to disapproving. Maybe we can block a user permanently (?)
+1. A user has already been registered, now he has to be approved by an administrator to use the system.
+An admin can log in to the system with his credentials and can approve the user.
+Ignoring the approval process is very much like disapproving.
 
+If the user sends repeated registering requests, then  maybe we can block that user permanently.
 
 
 ```

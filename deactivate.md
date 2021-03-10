@@ -35,7 +35,7 @@ factory.put(
 }
 ```
 
-3. Any user trying to deactivate with invalid token/ credentials,
+3. Any user trying to deactivate with invalid token/credentials,
 
 ```
 factory.put(
