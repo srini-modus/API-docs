@@ -57,3 +57,5 @@ message = {
 }
 self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 ```
+Note: The above errors will be standardized according to the regular error message format.
+Please note that `message` can be changed in future.

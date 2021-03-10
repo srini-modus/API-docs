@@ -18,6 +18,8 @@ self.assertIn("access", response.data)
 {"refresh":"...............",
 "access":".................."}
 ```
+Lipak, please store `refresh` and `access` tokens in browsers' localstorage.
+
 All the subsequent requests after login should include the `access` token in the `Authorization` header.
 e.g: 
 
