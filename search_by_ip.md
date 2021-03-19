@@ -61,7 +61,7 @@ he would receive an 400 bad request response with the following error message,
 {
     "success": False,
     "error-code": None,
-    "errors": {"ipaddress": ["'ipaddress' parameter is required."]},
+    "errors": {"ipaddress": ["'41.78.68.0/34' is not a valid IPAddress or CIDR"]},
     "message": "Validation errors have occurred",
 }
 ```
