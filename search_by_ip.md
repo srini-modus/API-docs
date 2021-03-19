@@ -10,23 +10,21 @@ request = self.factory.get(
 Assuming the request is a success, The following response will be sent to the client,
 
 ```
-{
+[{
     'rir_provider_code':'ARIN',
-    'record_status_code': 'ALLOCATED',
-    'inr_type_code': 'IPv4',
-    'ip_address': '41.78.68.0/22',
-    'country_code': 'TZ',
-    'last_modified': '2017-12-20',
-    'created_at': '2021-03-17T06:40:21.647400Z', 
-    'updated_at': '2021-03-17T06:40:21.647404Z',
-    'org_name': 'Vodacom',
-    'org_country': 'ZA',
-    'org_address': 'PO Box 7243,Roggebaai,Cape Town 8012', 'phone_number': 'tel:+27-21-940-9400',
+    'status_code': 'ALLOCATED',
+    'address_type': 'IPv4',
+    'network_address': '41.78.68.0/22',
+    'country_or_economic_zone': 'TZ',
+    'last_updated_at': '2017-12-20',
+    'organisation_name': 'Vodacom',
+    'organisation_country': 'ZA',
+    'organisation_address': 'PO Box 7243,Roggebaai,Cape Town 8012',
+    'phone_number': 'tel:+27-21-940-9400',
     'fax_number': '',
-    'status': 'ALLOCATED PA',
-    'parent': '41.0.0.0/8',
+    'parent_network_address': '41.0.0.0/8',
     'source', 'ARIN'
-}
+}]
 ```
 2. User does not enter any data and hits search 
 ```
