@@ -2,7 +2,7 @@
 
 ```
 request = self.factory.get(
-        "/api/search/date",
+        "/api/search",
         {"date" : "2000-12-121"}, 
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
@@ -22,7 +22,7 @@ he would receive a 400 bad request response with the following error message,
 
 ```
 request = self.factory.get(
-        "/api/search/date",
+        "/api/search",
         {"date" : "2000-12-12", "company_name": "Vodacom"}, 
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
@@ -48,7 +48,7 @@ That the response will be a 400 bad request with error(s) message as,
 
 ```
 request = self.factory.get(
-        "/api/search/date",
+        "/api/search",
         {"date": "2017-12-20"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )

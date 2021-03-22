@@ -26,7 +26,7 @@ Assuming the request is a success, The following response will be sent to the cl
     'source', 'ARIN'
 }]
 ```
-2. User enters q invalid input data such as an invalid ipaddress or CIDR.
+2. User enters a invalid input data such as an invalid ipaddress or CIDR.
 
 ```
 request = self.factory.get(
