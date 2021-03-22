@@ -2,7 +2,7 @@
 
 ```
 request = self.factory.get(
-        "/api/search/ipaddress",
+        "/api/search",
         {"ipaddress": "41.78.68.0"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
@@ -26,36 +26,17 @@ Assuming the request is a success, The following response will be sent to the cl
     'source', 'ARIN'
 }]
 ```
-2. User does not enter any data and hits search 
-```
-request = self.factory.get(
-        "/api/search/ipaddress",
-        HTTP_AUTHORIZATION=f"Bearer {access_token}",
-)
-```
-
-he would receive an 400 bad request response with the following error message,
-
-```
-{
-    "success": False,
-    "error-code": None,
-    "errors": {"ipaddress": ["'ipaddress' parameter is required."]},
-    "message": "Validation errors have occurred",
-}
-```
-
-3. User enters an invalid input data such as an invalid ipaddress or CIDR.
+2. User enters q invalid input data such as an invalid ipaddress or CIDR.
 
 ```
 request = self.factory.get(
-        "/api/search/ipaddress",
+        "/api/search",
         {"ipaddress": "41.78.68.0/34"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
 ```
 
-he would receive an 400 bad request response with the following error message,
+he would receive a 400 bad request response with the following error message,
 
 ```
 {

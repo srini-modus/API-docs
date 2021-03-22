@@ -1,27 +1,8 @@
-1. User does not enter any data and hits search,
+1. User enters a company name which exists in the database, 
 
 ```
 request = self.factory.get(
-        "/api/search/company",
-        HTTP_AUTHORIZATION=f"Bearer {access_token}",
-)
-```
-
-he would receive a 400 bad request response with the following error message,
-
-```
-{
-    "success": False,
-    "error-code": None,
-    "errors": {"company_name": ["'company_name' parameter is required."]},
-    "message": "Validation errors have occurred",
-}
-```
-2. User enters a company name which exists in the database, 
-
-```
-request = self.factory.get(
-        "/api/search/company",
+        "/api/search",
         {"company_name": "Vodacom"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
