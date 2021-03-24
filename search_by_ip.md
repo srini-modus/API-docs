@@ -3,7 +3,7 @@
 ```
 request = self.factory.get(
         "/api/search",
-        {"ipaddress": "41.78.68.0"},
+        {"ip_address": "41.78.68.0"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
 ```
@@ -44,7 +44,7 @@ Assuming the request is a success, The following response will be sent to the cl
 ```
 request = self.factory.get(
         "/api/search",
-        {"ipaddress": "41.78.68.0/34"},
+        {"ip_address": "41.78.68.0/34"},
         HTTP_AUTHORIZATION=f"Bearer {access_token}",
 )
 ```
